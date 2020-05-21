@@ -3,26 +3,27 @@ use std::io;
 fn main() {
 
     loop {
-    println!("Write a number.");
-    
-    let mut number = String::new();
-    io::stdin().read_line(&mut number)
-        .expect("Unable to get str!");
+        //SOMETHING CHANGE
+        println!("Write a number.");
+        
+        let mut number = String::new();
+        io::stdin().read_line(&mut number)
+            .expect("Unable to get str!");
 
-    if number.trim() == "quit" {
-        break;
-    }
-
-    let number: i32 = match number.trim().parse() {
-        Ok(num) => num,
-        Err(_) => {
-            println!("Unable to parse str as int!");
-            continue;
+        if number.trim() == "quit" {
+            break;
         }
-    };
-    print!("Answer: ");
-    print_binary_number(number);
-    println!();
+
+        let number: i32 = match number.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("Unable to parse str as int!");
+                continue;
+            }
+        };
+        print!("Answer: ");
+        print_binary_number(number);
+        println!();
     }
 } 
 
