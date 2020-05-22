@@ -5,12 +5,15 @@ fn main() {
     loop {
         //SOMETHING CHANGE
         println!("Write a number.");
-        
-        let mut number = String::new();
-        io::stdin().read_line(&mut number)
-            .expect("Unable to get str!");
+        let stdin = io::stdin(); 
+        let number = {
+            let mut nums = String::new();
+            stdin.read_line(&mut nums)
+                .expect("Unable to get str!");
+            nums
+        };
 
-        if number.trim() == "quit" {
+        if number == "quit" {
             break;
         }
 
